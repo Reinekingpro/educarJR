@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    font-family: Arial;
+
+    /* 👇 centra TODO */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    /* fondo */
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+        url("../img/fondo.jpg"); /* 👈 IMPORTANTE: ../ porque estás en css/ */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* H2 */
+h2{
+    text-align: center;
+}
+
+/* caja */
+.contenedor {
+    background: white;
+    width: 320px;
+    margin: 80px auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    font-size: 18px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.avatars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 60px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    transition: 0.2s;
+}
+
+.avatar:hover {
+    transform: scale(1.2);
+}
+
+.seleccionado {
+    border: 3px solid green;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    background: #091f82;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+/* PERSONAJE */
+.personaje {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    text-align: center;
+}
+
+.personaje img {
+    width: 100px;
+    animation: flotar 2s infinite ease-in-out;
+}
+
+.burbuja {
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    display: none;
+}
+
+/* animaciones */
+@keyframes flotar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.hablando {
+    animation: hablar 0.3s infinite alternate;
+}
+
+@keyframes hablar {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
