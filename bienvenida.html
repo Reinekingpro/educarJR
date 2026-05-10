@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego de números</title>
+
+    <link rel="icon" href="img/logo1.png" type="image/png">
+    <link rel="stylesheet" href="css/estilo_bienvenida.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CONFETI -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <div class="barra-superior">
+            <div class="lado-izquierdo">
+                <img id="avatar">
+                <h1 id="saludo"></h1>
+            </div>
+
+            <div class="titulo">
+                ¡Aprenderemos a contar del 1 al 5!
+            </div>
+        </div>
+
+        <div class="juego">
+
+            <div class="grid-numeros">
+                <div class="cuadro" data-num="1"></div>
+                <div class="cuadro" data-num="2"></div>
+                <div class="cuadro" data-num="3"></div>
+                <div class="cuadro" data-num="4"></div>
+                <div class="cuadro" data-num="5"></div>
+            </div>
+
+            <div id="estrellas"></div>
+
+            <!-- 👇 CONTENEDOR DE BOTONES -->
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <button id="btnSiguiente" class="btn btn-success" style="display:none;">
+                    Siguiente nivel 🚀
+                </button>
+
+                <button id="btnReiniciar" class="btn btn-primary" style="display:none;">
+                    Contar de nuevo 🔄
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 🔊 AUDIO -->
+    <audio id="okSound" src="sonidos/ok.mp3"></audio>
+
+    <script src="js/zona1.js"></script>
+    <script src="js/zona1_juego.js"></script>
+
+</body>
+</html>

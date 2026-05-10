@@ -1,0 +1,198 @@
+/* =========================
+   BASE
+========================= */
+body {
+    margin: 0;
+    font-family: 'Baloo 2', cursive;
+    background: linear-gradient(135deg, #f2f2f2, #e6f0ff);
+
+    display: flex;
+    justify-content: center;   /* horizontal */
+    align-items: center;       /* vertical */
+    min-height: 100vh;         /* altura completa de pantalla */
+
+    touch-action: none; /* 🔥 evita que el navegador bloquee el drag */
+}
+
+/* CONTENEDOR */
+.contenedor {
+    width: 1000px;
+    max-width: 95%;
+    margin: 30px auto;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   BARRA SUPERIOR
+========================= */
+.barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding: 20px 25px;
+    background: linear-gradient(90deg, #6c8cc7, #8aa6d9);
+    color: white;
+    gap: 15px;
+}
+
+.lado-izquierdo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    min-width: 250px;
+}
+
+#avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#saludo {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 600;
+    color: white;
+}
+
+.titulo {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: right;
+    flex: 1;
+    min-width: 250px;
+    line-height: 1.2;
+}
+
+
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 768px) {
+
+    .barra-superior {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .lado-izquierdo {
+        justify-content: center;
+    }
+
+    .titulo {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .grid-numeros {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cuadro {
+        font-size: 32px;
+    }
+}
+
+/* =========================
+   CELULAR
+========================= */
+@media (max-width: 480px) {
+
+    .grid-numeros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cuadro {
+        font-size: 28px;
+    }
+
+    #avatar {
+        width: 55px;
+        height: 55px;
+    }
+
+    #saludo {
+        font-size: 20px;
+    }
+}
+
+/*juego*/
+.juego {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.numeros, .casillas {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px;
+}
+
+/* NÚMEROS */
+.item {
+    width: 70px;
+    height: 70px;
+    background: #4CAF50;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    cursor: grab;
+
+    /* importante para arrastre */
+    position: relative;
+
+    touch-action: none;
+    user-select: none;
+}
+
+.item:active {
+    cursor: grabbing;
+}
+
+/* CASILLAS */
+.dropzone {
+    width: 70px;
+    height: 70px;
+    border: 3px dashed #999;
+    border-radius: 12px;
+
+    /* 🔥 IMPORTANTE: evita que se “desaparezca” visualmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f9f9f9;
+
+    position: relative;
+}
+
+/* CORRECTO */
+.correcto {
+    background: #4CAF50;
+    border: none;
+    color: white;
+    animation: pop 0.3s;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.7); }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}

@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f1e4cc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Contenedor principal */
+.container {
+  position: relative;
+}
+
+/* Caja del login (MÁS GRANDE) */
+.login-box {
+  background: #fff;
+  padding: 80px 40px 40px;
+  border-radius: 15px;
+  width: 400px; /* antes 300px */
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Imagen superior */
+.avatar {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar img {
+  width: 90px;
+}
+
+/* Inputs */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  padding-right: 35px;
+  border: none;
+  border-radius: 8px;
+  background: #f1f1f1;
+  outline: none;
+}
+
+.input-group .icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ===== AVATARES (ARREGLADO EN GRID) ===== */
+.avatars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 por fila */
+  gap: 10px;
+  margin: 20px 0;
+  justify-items: center;
+}
+
+.avatars img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: 0.3s;
+}
+
+.avatars img:hover {
+  transform: scale(1.2);
+}
+
+.avatars img.selected {
+  border: 3px solid #00c853;
+  transform: scale(1.15);
+}
+
+/* Botón */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #d32f2f;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #b71c1c;
+}
+
+/* Texto */
+.forgot {
+  margin-top: 15px;
+  color: #777;
+}
+
+/* Titulo del login */
+.titulo {
+  background-color: #d32f2f;
+  color: #fff;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  border-radius: 8px;
+}

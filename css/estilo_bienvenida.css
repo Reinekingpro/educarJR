@@ -1,0 +1,177 @@
+/* =========================
+   BASE
+========================= */
+body {
+    margin: 0;
+    font-family: 'Baloo 2', cursive;
+    background: linear-gradient(135deg, #f2f2f2, #e6f0ff);
+
+    display: flex;
+    justify-content: center;   /* horizontal */
+    align-items: center;       /* vertical */
+    min-height: 100vh;         /* altura completa de pantalla */
+}
+
+/* CONTENEDOR */
+.contenedor {
+    width: 1000px;
+    max-width: 95%;
+    margin: 30px auto;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   BARRA SUPERIOR
+========================= */
+.barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding: 20px 25px;
+    background: linear-gradient(90deg, #6c8cc7, #8aa6d9);
+    color: white;
+    gap: 15px;
+}
+
+.lado-izquierdo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    min-width: 250px;
+}
+
+#avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#saludo {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 600;
+    color: white;
+}
+
+.titulo {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: right;
+    flex: 1;
+    min-width: 250px;
+    line-height: 1.2;
+}
+
+/* =========================
+   JUEGO
+========================= */
+.juego {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+/* GRID RESPONSIVE */
+.grid-numeros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* CUADROS FLEXIBLES */
+.cuadro {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 🔥 mantiene cuadrados perfectos */
+
+    background: #dce6f7;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 40px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.cuadro:hover {
+    background: #a9c4ff;
+    transform: scale(1.05);
+}
+
+.cuadro.activo {
+    background: #6c8cc7;
+    color: white;
+}
+
+/* ESTRELLAS */
+#estrellas {
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 768px) {
+
+    .barra-superior {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .lado-izquierdo {
+        justify-content: center;
+    }
+
+    .titulo {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .grid-numeros {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cuadro {
+        font-size: 32px;
+    }
+}
+
+/* =========================
+   CELULAR
+========================= */
+@media (max-width: 480px) {
+
+    .grid-numeros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cuadro {
+        font-size: 28px;
+    }
+
+    #avatar {
+        width: 55px;
+        height: 55px;
+    }
+
+    #saludo {
+        font-size: 20px;
+    }
+}

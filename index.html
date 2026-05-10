@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>NexoMat</title>
+  <link rel="stylesheet" href="css/estilo_login.css">
+  <link rel="icon" href="img/logo1.png" type="image/png">
+</head>
+<body>
+
+<div class="container">
+  
+  <!-- Imagen superior -->
+  <div class="avatar">
+    <img src="img/personaje.png" alt="User">
+  </div>
+
+  <div class="login-box">
+    <form onsubmit="return validar(event)">
+
+      <div class="titulo">
+        NexoMat
+      </div>
+
+      <!-- Nombre -->
+      <div class="input-group">
+        <input type="text" id="nombre" placeholder="Escribe tu nombre">
+        <span class="icon">👤</span>
+      </div>
+
+      <!-- AVATARES (reemplaza password) -->
+      <div class="avatars">
+        <img src="img/avatar1.png" onclick="seleccionarAvatar(this)">
+        <img src="img/avatar2.png" onclick="seleccionarAvatar(this)">
+        <img src="img/avatar3.png" onclick="seleccionarAvatar(this)">
+        <img src="img/avatar4.png" onclick="seleccionarAvatar(this)">
+        <img src="img/avatar5.png" onclick="seleccionarAvatar(this)">
+        <img src="img/avatar6.png" onclick="seleccionarAvatar(this)">
+      </div>
+
+      <button type="submit">ENTRAR</button>
+
+      <p class="forgot">
+        ¡Elige tu avatar!
+      </p>
+
+    </form>
+  </div>
+
+</div>
+
+<!-- Sonidos -->
+<audio id="clickSound" src="sonidos/click.mp3"></audio>
+<audio id="okSound" src="sonidos/ok.mp3"></audio>
+
+<!-- Confeti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script src="js/script_login.js"></script>
+
+</body>
+</html>
